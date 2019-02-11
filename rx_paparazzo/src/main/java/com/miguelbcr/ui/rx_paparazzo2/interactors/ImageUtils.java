@@ -143,7 +143,9 @@ public final class ImageUtils {
   }
 
   private File getPrivateDir(String dirname) {
-    File dir = targetUi.getContext().getFilesDir();
+    File dir = config.getInternalStoragePath() != null
+      ? config.getInternalStoragePath()
+      : targetUi.getContext().getFilesDir();
     File storageDir = TextUtils.isEmpty(dirname) ? dir : new File(dir, dirname);
 
     // Create the storage directory if it does not exist

@@ -22,6 +22,8 @@ import com.miguelbcr.ui.rx_paparazzo2.entities.size.ScreenSize;
 import com.miguelbcr.ui.rx_paparazzo2.entities.size.Size;
 import com.yalantis.ucrop.UCrop;
 
+import java.io.File;
+
 public class Config {
 
   private static final String DEFAULT_FILE_PROVIDER_PATH = "RxPaparazzo";
@@ -35,6 +37,7 @@ public class Config {
   private boolean doCrop;
   private boolean failCropIfNotImage;
   private boolean useInternalStorage;
+  private File internalStoragePath;
 
   private String pickMimeType;
   private String[] pickMultipleMimeTypes;
@@ -96,6 +99,14 @@ public class Config {
 
   public void setUseInternalStorage(boolean useInternalStorage) {
     this.useInternalStorage = useInternalStorage;
+  }
+
+  public File getInternalStoragePath() {
+    return internalStoragePath;
+  }
+
+  public void setInternalStoragePath(File internalStoragePath) {
+    this.internalStoragePath = internalStoragePath;
   }
 
   public void setUseDocumentPicker(boolean useDocumentPicker) {
