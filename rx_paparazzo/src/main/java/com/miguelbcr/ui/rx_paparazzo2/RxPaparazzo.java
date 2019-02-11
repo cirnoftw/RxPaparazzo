@@ -29,6 +29,7 @@ import com.miguelbcr.ui.rx_paparazzo2.internal.di.ApplicationComponent;
 import com.miguelbcr.ui.rx_paparazzo2.internal.di.ApplicationModule;
 import com.yalantis.ucrop.UCrop;
 
+import java.io.File;
 import java.util.List;
 
 import io.reactivex.Observable;
@@ -133,6 +134,14 @@ public final class RxPaparazzo {
      */
     public B useInternalStorage() {
       this.config.setUseInternalStorage(true);
+      return self;
+    }
+
+    /**
+     * Sets the path for using with useInternalStorage(), defaults to getContext().getFilesDir()
+     */
+    public B setInternalStoragePath(File internalStoragePath) {
+      this.config.setInternalStoragePath(internalStoragePath);
       return self;
     }
 
